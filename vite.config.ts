@@ -1,4 +1,4 @@
-import { copyFileSync, readdirSync } from 'node:fs';
+import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
@@ -19,14 +19,20 @@ for (const fileName of readdirSync(SRC).filter((name) => name.endsWith('.vue')).
   entries[fileName.replace(/\.vue$/, '')] = `src/${fileName}`;
 }
 
-/** グローバル型定義をlibにコピーする */
+/**
+ * グローバル型定義をlibに出力する。
+ * src/types/からlib/直下へ置き場所が変わるため、相対参照を付け替える
+ */
 const copyStaticFiles = {
   name: 'copy-static-files',
   writeBundle() {
-    copyFileSync(
-      'src/types/global.d.ts',
-      'lib/global.d.ts'
-    );
+    const source = readFileSync('src/types/global.d.ts', 'utf8');
+    const output = source.replace(`import('../components')`, `import('./components')`);
+    // 付け替え漏れは利用側で型が壊れるだけで気づきにくいため、ビルドを止める
+    if (output === source) {
+      throw new Error(`src/types/global.d.ts: import('../components') not found`);
+    }
+    writeFileSync('lib/global.d.ts', output);
   }
 };
 

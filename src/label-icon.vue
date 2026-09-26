@@ -18,6 +18,7 @@
     <!-- スロットに複数の要素が入っても、flexの子要素に分かれて間にgapが入らないよう1つにまとめる -->
     <span
       v-if="slots.default != null || props.preset != null"
+      class="dwui-label"
       :class="props.labelClass"
       :style="props.labelStyle"
     >
@@ -58,5 +59,10 @@ const slots = defineSlots<Slots>();
   display: inline-flex;
   align-items: center;
   gap: 0.25em;
+}
+
+/* inline-flexのベースラインは先頭の子(アイコン)から決まり、周囲の文字より浮くため、ラベルから決まるようにする */
+:where(.dwui-label-icon > .dwui-label) {
+  align-self: baseline;
 }
 </style>

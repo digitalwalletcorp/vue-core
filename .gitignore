@@ -2,3 +2,4 @@ node_modules
 /lib
 /dest
 /test/coverage
+.DS_Store
