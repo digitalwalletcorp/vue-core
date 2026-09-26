@@ -68,11 +68,11 @@
     "src/**/*"
   ],
   "peerDependencies": {
-    "vue": "^3.5.0"
+    "vue": "^3.5.29"
   },
   "devDependencies": {
     "@nuxt/kit": "^3.17.5",
-    "@types/node": "24.0.8",
+    "@types/node": "24.13.6",
     "@vitejs/plugin-vue": "^6.0.0",
     "@vitest/coverage-v8": "3.2.4",
     "@vue/test-utils": "2.4.6",
@@ -83,7 +83,7 @@
     "vite-plugin-dts": "5.1.0",
     "vite-tsconfig-paths": "6.1.1",
     "vitest": "3.2.4",
-    "vue": "^3.5.0",
+    "vue": "^3.5.29",
     "vue-tsc": "3.1.5"
   }
 }
