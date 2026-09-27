@@ -4,7 +4,7 @@
 <template>
   <span
     class="dwui-label-icon"
-    :style="props.gap == null ? undefined : { gap: props.gap }"
+    :style="props.gap == null ? undefined : { '--dwui-label-icon-gap': props.gap }"
   >
     <slot name="icon">
       <component
@@ -15,7 +15,7 @@
         :style="props.iconStyle"
       />
     </slot>
-    <!-- スロットに複数の要素が入っても、flexの子要素に分かれて間にgapが入らないよう1つにまとめる -->
+    <!-- スロットに複数の要素が入ってもラベルとして1つにまとめ、アイコンとの間隔をラベル側で空ける -->
     <span
       v-if="slots.default != null || props.preset != null"
       class="dwui-label"
@@ -55,14 +55,21 @@ const slots = defineSlots<Slots>();
 </script>
 
 <style>
+/*
+ * flexにせず通常のインライン配置に任せる。flexアイテムになるとvertical-alignが無視され、
+ * vue-svg-iconsがアイコンを文字の縦位置中央に揃える調整が効かなくなるため
+ */
 :where(.dwui-label-icon) {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25em;
+  display: inline-block;
 }
 
-/* inline-flexのベースラインは先頭の子(アイコン)から決まり、周囲の文字より浮くため、ラベルから決まるようにする */
+/* スロットに複数の要素が入っても1つにまとめ、前後の空白が隙間にならないようinline-blockにする */
 :where(.dwui-label-icon > .dwui-label) {
-  align-self: baseline;
+  display: inline-block;
+}
+
+/* アイコンとラベルの間隔。gapはflex専用のためmarginで空ける */
+:where(.dwui-label-icon > .dwui-label:not(:first-child)) {
+  margin-left: var(--dwui-label-icon-gap, 0.25em);
 }
 </style>
