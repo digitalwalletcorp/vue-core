@@ -66,7 +66,9 @@ export default defineConfig({
     rollupOptions: {
       external: [
         'vue',
-        '@nuxt/kit'
+        '@nuxt/kit',
+        // dependenciesのため利用側でインストールされる。バンドルに含めると利用側のアイコンと二重になる
+        /^@digitalwalletcorp\/vue-svg-icons(\/.*)?$/
       ],
       output: [
         { format: 'es', entryFileNames: '[name].js' },

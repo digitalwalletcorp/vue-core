@@ -30,6 +30,8 @@ It comes with no default styles, allowing you to easily style it by applying you
 | `labelClass` | `ClassValue`  | Class for the element wrapping the label. |
 | `labelStyle` | `StyleValue`  | Style for the element wrapping the label. |
 
+> 💡 Non-prop attributes (`class`, `style`, `aria-*`, etc.) are applied directly to the root `<button>` element.
+
 ##### 🧩 Slots
 
 | Slot      | Description |
