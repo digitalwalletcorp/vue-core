@@ -11,14 +11,15 @@ Basic UI components for Vue 3.
 #### 📦 Installation
 
 ```bash
-npm install @digitalwalletcorp/vue-core
+npm install @digitalwalletcorp/vue-core @digitalwalletcorp/vue-svg-icons
 # or
-yarn add @digitalwalletcorp/vue-core
+yarn add @digitalwalletcorp/vue-core @digitalwalletcorp/vue-svg-icons
 ```
 
 > ##### ⚠️ Requirements
 >
 > * **Vue 3.5.29+**: Props are typed with Vue's `ClassValue`, which is exported since Vue 3.5.29.
+> * **@digitalwalletcorp/vue-svg-icons 1.13.0+**: A peer dependency for component icons. Installing it alongside `vue-core` ensures a single shared copy of the icon package in your application.
 
 #### 📖 Usage
 

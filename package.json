@@ -68,9 +68,11 @@
     "src/**/*"
   ],
   "peerDependencies": {
+    "@digitalwalletcorp/vue-svg-icons": "^1.13.0",
     "vue": "^3.5.29"
   },
   "devDependencies": {
+    "@digitalwalletcorp/vue-svg-icons": "^1.13.0",
     "@nuxt/kit": "^3.17.5",
     "@types/node": "24.13.6",
     "@vitejs/plugin-vue": "^6.0.0",
@@ -85,8 +87,5 @@
     "vitest": "3.2.4",
     "vue": "^3.5.29",
     "vue-tsc": "3.1.5"
-  },
-  "dependencies": {
-    "@digitalwalletcorp/vue-svg-icons": "^1.13.0"
   }
 }

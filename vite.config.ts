@@ -67,7 +67,7 @@ export default defineConfig({
       external: [
         'vue',
         '@nuxt/kit',
-        // dependenciesのため利用側でインストールされる。バンドルに含めると利用側のアイコンと二重になる
+        // peerDependenciesのため利用側でインストールしたものを使う。バンドルに含めると利用側のアイコンと二重になる
         /^@digitalwalletcorp\/vue-svg-icons(\/.*)?$/
       ],
       output: [
