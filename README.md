@@ -66,13 +66,14 @@ export default defineNuxtConfig({
 
 ##### 📐 Stylesheet
 
-The components need the bundled stylesheet.
+Import the stylesheets to ensure default alignment and icon styles.
 
 * **Vue:** Import in your entry file.
 
 ```ts
 // main.ts
 import '@digitalwalletcorp/vue-core/style.css';
+import '@digitalwalletcorp/vue-svg-icons/style.css'; // Required for components using icons from vue-svg-icons
 ```
 
 * **Nuxt:** Add to your config array.
@@ -80,14 +81,22 @@ import '@digitalwalletcorp/vue-core/style.css';
 ```ts
 // nuxt.config.ts
 export default defineNuxtConfig({
-  css: ['@digitalwalletcorp/vue-core/style.css']
+  css: [
+    '@digitalwalletcorp/vue-core/style.css',
+    '@digitalwalletcorp/vue-svg-icons/style.css' // Required for components using icons from vue-svg-icons
+  ]
 });
 ```
+
+> **💡 Icon Styles**
+>
+> Components such as `AccordionFieldset` rely on [@digitalwalletcorp/vue-svg-icons](https://www.npmjs.com/package/@digitalwalletcorp/vue-svg-icons). Importing its stylesheet ensures icons align properly with text.
 
 #### 🧰 Components
 
 | Component | Description |
 | --------- | ----------- |
+| [`AccordionFieldset`](https://github.com/digitalwalletcorp/vue-core/blob/main/docs/components/accordion-fieldset.md) | A fieldset whose contents can be collapsed and expanded from the legend. |
 | [`LabelIcon`](https://github.com/digitalwalletcorp/vue-core/blob/main/docs/components/label-icon.md) | Displays an icon and a text label side by side. |
 | [`LabelButton`](https://github.com/digitalwalletcorp/vue-core/blob/main/docs/components/label-button.md) | Renders a button containing an icon and a text label. |
 

@@ -1,6 +1,6 @@
 {
   "name": "@digitalwalletcorp/vue-core",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "type": "module",
   "description": "Basic UI components for Vue 3",
   "main": "lib/index.cjs",
@@ -85,5 +85,8 @@
     "vitest": "3.2.4",
     "vue": "^3.5.29",
     "vue-tsc": "3.1.5"
+  },
+  "dependencies": {
+    "@digitalwalletcorp/vue-svg-icons": "^1.13.0"
   }
 }
