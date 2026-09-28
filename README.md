@@ -125,9 +125,12 @@ export default defineNuxtConfig({
 | Component | Description |
 | --------- | ----------- |
 | [`AccordionFieldset`](https://github.com/digitalwalletcorp/vue-core/blob/main/docs/components/accordion-fieldset.md) | A fieldset whose contents can be collapsed and expanded from the legend. |
+| [`AccordionSection`](https://github.com/digitalwalletcorp/vue-core/blob/main/docs/components/accordion-section.md) | An area whose contents can be collapsed and expanded with a toggle button below them. |
 | [`HourglassLoading`](https://github.com/digitalwalletcorp/vue-core/blob/main/docs/components/hourglass-loading.md) | Shows an hourglass in place of a value while it is loading. |
 | [`LabelIcon`](https://github.com/digitalwalletcorp/vue-core/blob/main/docs/components/label-icon.md) | Displays an icon and a text label side by side. |
 | [`LabelButton`](https://github.com/digitalwalletcorp/vue-core/blob/main/docs/components/label-button.md) | Renders a button containing an icon and a text label. |
+| [`PageSection`](https://github.com/digitalwalletcorp/vue-core/blob/main/docs/components/page-section.md) | A section of a page with a heading. |
+| [`PageTitle`](https://github.com/digitalwalletcorp/vue-core/blob/main/docs/components/page-title.md) | The title bar of a page, with the contents of the default slot on its right side. |
 | [`TabGroup` / `TabContent`](https://github.com/digitalwalletcorp/vue-core/blob/main/docs/components/tab-group.md) | Switches between contents with tab headers. |
 
 #### 📜 License

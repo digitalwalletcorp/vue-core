@@ -2,24 +2,17 @@ import { describe, it, expect, vi, afterEach } from 'vitest';
 import { defineComponent, h, markRaw, nextTick } from 'vue';
 import { mount } from '@vue/test-utils';
 import AccordionFieldset from '@/accordion-fieldset.vue';
+import { mockResizeObserver } from '#/helpers/resize-observer';
 
 // mount()はpropsをreactiveで包むため、コンポーネントをmarkRawしておかないとVueが警告を出す
 const DummyIcon = markRaw(defineComponent({
   setup: () => () => h('svg', { 'data-dummy-icon': '' })
 }));
 
-/**
- * 中身の高さをgetBoundingClientRectの戻り値で差し替える
- *
- * @param {number} height
- */
-const mockContentsHeight = (height: number) => {
-  vi.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockReturnValue({ height } as DOMRect);
-};
-
 describe('AccordionFieldset', () => {
   afterEach(() => {
     vi.restoreAllMocks();
+    vi.unstubAllGlobals();
   });
 
   describe('legend', () => {
@@ -73,8 +66,9 @@ describe('AccordionFieldset', () => {
     });
 
     it('shrinks the contents when they are taller than the shrunk height', async () => {
-      mockContentsHeight(100);
+      const { resize } = mockResizeObserver();
       const wrapper = mount(AccordionFieldset, { props: { initialExpand: true } });
+      resize(100);
       await wrapper.find('button').trigger('click');
       expect(wrapper.find('button').attributes('aria-expanded')).toBe('false');
       expect(wrapper.find('.dwui-accordion-contents').classes()).toContain('dwui-shrunk');
@@ -84,23 +78,34 @@ describe('AccordionFieldset', () => {
     });
 
     it('does not shrink the contents when they are lower than the shrunk height', async () => {
-      mockContentsHeight(30);
+      const { resize } = mockResizeObserver();
       const wrapper = mount(AccordionFieldset, { props: { initialExpand: true } });
+      resize(30);
       await wrapper.find('button').trigger('click');
       const classes = wrapper.find('.dwui-accordion-contents').classes();
       expect(classes).not.toContain('dwui-shrunk');
       expect(classes).not.toContain('dwui-expanded');
     });
 
-    it('re-evaluates whether the contents can shrink when the observer changes', async () => {
-      mockContentsHeight(30);
-      const wrapper = mount(AccordionFieldset, { props: { initialExpand: true, observer: { rows: 1 } } });
+    it('re-evaluates whether the contents can shrink when their size changes', async () => {
+      const { resize } = mockResizeObserver();
+      const wrapper = mount(AccordionFieldset, { props: { initialExpand: true } });
+      // 隠れたタブの中にあるなど、表示されていない間は高さが0になる
+      resize(0);
       await nextTick();
       expect(wrapper.find('.dwui-accordion-contents').classes()).not.toContain('dwui-expanded');
 
-      mockContentsHeight(100);
-      await wrapper.setProps({ observer: { rows: 10 } });
+      resize(100);
+      await nextTick();
       expect(wrapper.find('.dwui-accordion-contents').classes()).toContain('dwui-expanded');
+    });
+
+    it('stops observing the contents when unmounted', () => {
+      const { observing } = mockResizeObserver();
+      const wrapper = mount(AccordionFieldset);
+      expect(observing()).toBe(1);
+      wrapper.unmount();
+      expect(observing()).toBe(0);
     });
   });
 

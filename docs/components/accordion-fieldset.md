@@ -2,6 +2,7 @@
 
 A `<fieldset>` whose contents can be collapsed and expanded with a toggle button in the legend.
 When the contents are lower than the collapsed height, the toggle does not shrink them.
+The height is measured again whenever the size of the contents changes (e.g., when a hidden tab containing it is shown, or rows are added), so you do not need to tell the component when to re-measure.
 
 ```vue
 <template>
@@ -31,7 +32,6 @@ When the contents are lower than the collapsed height, the toggle does not shrin
 | `legend`        | `string`  | The legend text. It is rendered as plain text. Use the `#legend` slot for markup. |
 | `disabled`      | `boolean` | Disables the `<fieldset>`. |
 | `initialExpand` | `boolean` | Shows the contents expanded at first. Defaults to `false`. |
-| `observer`      | `unknown` | Pass a state value (e.g., table data or array length) that changes when the content resizes. When updated, it re-measures the content height to show/hide the toggle properly. |
 
 > 💡 Non-prop attributes (`class`, `style`, `aria-*`, etc.) are applied directly to the root `<fieldset>` element.
 
