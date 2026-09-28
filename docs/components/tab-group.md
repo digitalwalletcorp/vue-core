@@ -114,3 +114,6 @@ watch(() => props.activated, async (activated) => {
 | `--dwui-tab-header-error-bg`          | Header background with `status="error"`. |
 | `--dwui-tab-header-error-selected-bg` | Selected header background with `status="error"`. |
 | `--dwui-tab-header-error-text`        | Header text with `status="error"`. |
+| `--dwui-tab-slide-distance`           | Where the contents slide in from when a tab is selected (`translateX`). Defaults to `-128px`. |
+| `--dwui-tab-slide-duration`           | Duration of the slide-in. Defaults to `0.35s`. |
+| `--dwui-tab-slide-easing`             | Timing function of the slide-in. Defaults to `cubic-bezier(0.22, 1, 0.36, 1)`. |

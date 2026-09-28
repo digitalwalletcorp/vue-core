@@ -105,8 +105,8 @@ const setLoading = (value: boolean) => {
   position: relative;
   padding: 4px 8px;
   overflow: hidden;
-  /* 全幅を横断すると速度が出てカクつくため、固定の移動量とease-outとフェードでスライドインする */
-  animation: dwui-tab-slide-in 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  /* 全幅を横断すると速度が出てカクつくため、既定は固定の移動量とease-outとフェードでスライドインする */
+  animation: dwui-tab-slide-in var(--dwui-tab-slide-duration, 0.35s) var(--dwui-tab-slide-easing, cubic-bezier(0.22, 1, 0.36, 1));
 }
 
 :where(.dwui-tab-loading) {
@@ -137,7 +137,7 @@ const setLoading = (value: boolean) => {
 @keyframes dwui-tab-slide-in {
   0% {
     opacity: 0;
-    transform: translateX(-128px);
+    transform: translateX(var(--dwui-tab-slide-distance, -128px));
   }
   100% {
     opacity: 1;
