@@ -1,6 +1,6 @@
 {
   "name": "@digitalwalletcorp/vue-core",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "type": "module",
   "description": "Basic UI components for Vue 3",
   "main": "lib/index.cjs",
