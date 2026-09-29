@@ -87,14 +87,14 @@ const presetIcon = computed((): { component: Component; props: Record<string, un
   display: block;
   margin: 4px 0 8px;
   padding-top: 2px;
-  font-size: var(--dwui-page-section-font-size, 12px);
+  font-size: var(--dwui-font-size-page-section, 12px);
   font-weight: 500;
 }
 
 :where(.dwui-page-section-title) {
   display: flex;
   align-items: center;
-  font-size: var(--dwui-page-section-title-font-size, 14px);
+  font-size: var(--dwui-font-size-page-section-title, 14px);
 }
 
 :where(.dwui-page-section-content) {

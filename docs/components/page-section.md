@@ -37,14 +37,14 @@ A section of a page with a heading.
 
 ##### 🧩 Slots
 
-| Slot      | Description |
-| --------- | ----------- |
+| Slot      | Description                           |
+| --------- | ------------------------------------- |
 | `icon`    | Replaces the icon selected by `icon`. |
-| `default` | The contents. |
+| `default` | The contents.                         |
 
 ##### 🎨 Styling
 
-| CSS variable | Description |
-| ------------ | ----------- |
-| `--dwui-page-section-font-size`       | Font size of the section. Defaults to `12px`. |
-| `--dwui-page-section-title-font-size` | Font size of the heading. Defaults to `14px`. |
+| CSS variable                          | Description                                   |
+| ------------------------------------- | --------------------------------------------- |
+| `--dwui-font-size-page-section`       | Font size of the section. Defaults to `12px`. |
+| `--dwui-font-size-page-section-title` | Font size of the heading. Defaults to `14px`. |

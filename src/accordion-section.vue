@@ -160,7 +160,7 @@ onMounted(() => {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(180deg, transparent 0%, transparent 60%, var(--dwui-accordion-section-fade, Canvas) 100%);
+  background-image: linear-gradient(180deg, transparent 0%, transparent 60%, var(--dwui-color-accordion-section-fade, Canvas) 100%);
   pointer-events: none;
 }
 

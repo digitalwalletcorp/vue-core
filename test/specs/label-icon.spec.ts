@@ -70,7 +70,7 @@ describe('LabelIcon', () => {
 
   it('sets gap only when specified', () => {
     expect(mount(LabelIcon, { props: { preset } }).attributes('style')).toBeUndefined();
-    expect(mount(LabelIcon, { props: { preset, gap: '0.5em' } }).attributes('style')).toBe('--dwui-label-icon-gap: 0.5em;');
+    expect(mount(LabelIcon, { props: { preset, gap: '0.5em' } }).attributes('style')).toBe('--dwui-gap-label-icon: 0.5em;');
   });
 
   it('applies class and style to each part', () => {

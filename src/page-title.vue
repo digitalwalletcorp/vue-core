@@ -45,12 +45,12 @@ const slots = defineSlots<Slots>();
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: var(--dwui-page-title-width, auto);
+  width: var(--dwui-width-page-title, auto);
   padding: 4px;
   border-radius: 4px;
-  background: var(--dwui-page-title-bg, linear-gradient(#323232 0%, rgb(32, 32, 31) 25%, rgb(32, 32, 31) 75%, #323232 100%));
-  color: var(--dwui-page-title-text, rgb(220, 220, 220));
-  font-size: var(--dwui-page-title-font-size, 14px);
-  font-weight: var(--dwui-page-title-font-weight, normal);
+  background: var(--dwui-background-page-title, linear-gradient(#323232 0%, rgb(32, 32, 31) 25%, rgb(32, 32, 31) 75%, #323232 100%));
+  color: var(--dwui-color-text-page-title, rgb(220, 220, 220));
+  font-size: var(--dwui-font-size-page-title, 14px);
+  font-weight: var(--dwui-font-weight-page-title, normal);
 }
 </style>

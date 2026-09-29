@@ -47,29 +47,29 @@ watch(() => props.activated, async (activated) => {
 
 ##### 🔧 Props (TabGroup)
 
-| Prop                 | Type         | Description |
-| -------------------- | ------------ | ----------- |
-| `selectedTabLabelId` | `string`     | The `labelId` of the selected tab. Bind it with `v-model:selected-tab-label-id`. The first tab is selected when omitted. |
+| Prop                 | Type         | Description                                                                                                                                                                              |
+| -------------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `selectedTabLabelId` | `string`     | The `labelId` of the selected tab. Bind it with `v-model:selected-tab-label-id`. The first tab is selected when omitted.                                                                 |
 | `selectFirstEnabled` | `boolean`    | When `selectedTabLabelId` is omitted, selects the first tab that is not disabled. Defaults to `false`, which selects the first tab even if it is disabled (its contents are then empty). |
-| `tabGroupName`       | `string`     | The `name` of the radio buttons behind the headers. Generated automatically when omitted. |
-| `headerClass`        | `ClassValue` | Class for the element containing the headers. |
-| `headerStyle`        | `StyleValue` | Style for the element containing the headers. |
-| `teleport`           | `string`     | Moves the headers to this target (`to` of `<Teleport>`). |
+| `tabGroupName`       | `string`     | The `name` of the radio buttons behind the headers. Generated automatically when omitted.                                                                                                |
+| `headerClass`        | `ClassValue` | Class for the element containing the headers.                                                                                                                                            |
+| `headerStyle`        | `StyleValue` | Style for the element containing the headers.                                                                                                                                            |
+| `teleport`           | `string`     | Moves the headers to this target (`to` of `<Teleport>`).                                                                                                                                 |
 
 ##### 📣 Events (TabGroup)
 
-| Event                    | Payload            | Description |
-| ------------------------ | ------------------ | ----------- |
+| Event                       | Payload           | Description                                            |
+| --------------------------- | ----------------- | ------------------------------------------------------ |
 | `update:selectedTabLabelId` | `labelId: string` | Emitted when a header is selected (used by `v-model`). |
-| `emit:changeSelectedTab` | `labelId: string`  | Emitted when a header is selected. |
+| `emit:changeSelectedTab`    | `labelId: string` | Emitted when a header is selected.                     |
 
 > ⚠️ When you pass `selectedTabLabelId`, bind it with `v-model`. The selected tab is owned by the parent, so a one-way binding (`:selected-tab-label-id` without updating the value) keeps the tab from switching on click. Binding with `v-model` also lets the parent reselect a tab at any time, e.g. back to the first tab after saving.
 
 ##### 🧩 Slots (TabGroup)
 
-| Slot      | Description |
-| --------- | ----------- |
-| `default` | The `TabContent` components. |
+| Slot      | Description                                                                                |
+| --------- | ------------------------------------------------------------------------------------------ |
+| `default` | The `TabContent` components.                                                               |
 | `loading` | Shown over a `TabContent` while it is loading. The default indicator is used when omitted. |
 
 ##### 🔧 Props (TabContent)
@@ -87,33 +87,33 @@ watch(() => props.activated, async (activated) => {
 
 ##### 🧩 Slots (TabContent)
 
-| Slot      | Slot props | Description |
-| --------- | ---------- | ----------- |
-| `icon`    | —          | An icon shown before the header text. It is rendered in the header, not in the contents. |
+| Slot      | Slot props                                                     | Description                                                                                                                                                                                                                                                                        |
+| --------- | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `icon`    | —                                                              | An icon shown before the header text. It is rendered in the header, not in the contents.                                                                                                                                                                                           |
 | `default` | `activated: boolean`, `setLoading: (loading: boolean) => void` | The contents. `activated` is `true` while the tab is selected, after `TabGroup` is mounted. Pass it to your component as a prop to run the process on selection. `setLoading(true)` lays the loading indicator over the contents and blocks interaction until `setLoading(false)`. |
 
 ##### 🎨 Styling
 
-| CSS variable | Description |
-| ------------ | ----------- |
-| `--dwui-loading-overlay`              | Overlay laid over the contents while loading. |
-| `--dwui-loading-spinner-size`         | Size of the default loading spinner. |
-| `--dwui-loading-spinner-color`        | Color of the moving part of the default spinner. |
-| `--dwui-loading-spinner-track`        | Color of the track of the default spinner. |
-| `--dwui-tab-border`                   | Border of the headers and the contents. |
-| `--dwui-tab-header-accent`            | Bottom border of the headers. |
-| `--dwui-tab-header-bg`                | Header background. |
-| `--dwui-tab-header-text`              | Header text. |
-| `--dwui-tab-header-selected-bg`       | Background of the selected header. |
-| `--dwui-tab-header-selected-text`     | Text of the selected header. |
-| `--dwui-tab-header-disabled-bg`       | Background of a disabled header. |
-| `--dwui-tab-header-hover-overlay`     | Color laid over a header on hover. |
-| `--dwui-tab-header-warn-bg`           | Header background with `status="warn"`. |
-| `--dwui-tab-header-warn-selected-bg`  | Selected header background with `status="warn"`. |
-| `--dwui-tab-header-warn-text`         | Header text with `status="warn"`. |
-| `--dwui-tab-header-error-bg`          | Header background with `status="error"`. |
-| `--dwui-tab-header-error-selected-bg` | Selected header background with `status="error"`. |
-| `--dwui-tab-header-error-text`        | Header text with `status="error"`. |
-| `--dwui-tab-slide-distance`           | Where the contents slide in from when a tab is selected (`translateX`). Defaults to `-128px`. |
-| `--dwui-tab-slide-duration`           | Duration of the slide-in. Defaults to `0.35s`. |
-| `--dwui-tab-slide-easing`             | Timing function of the slide-in. Defaults to `cubic-bezier(0.22, 1, 0.36, 1)`. |
+| CSS variable                                  | Description                                                                                   |
+| --------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `--dwui-overlay-color-loading`                | Overlay laid over the contents while loading.                                                 |
+| `--dwui-size-loading-spinner`                 | Size of the default loading spinner.                                                          |
+| `--dwui-border-color-loading-spinner`         | Color of the moving part of the default spinner.                                              |
+| `--dwui-border-color-loading-spinner-track`   | Color of the track of the default spinner.                                                    |
+| `--dwui-border-color-tab`                     | Border of the headers and the contents.                                                       |
+| `--dwui-border-color-tab-header-accent`       | Bottom border of the headers.                                                                 |
+| `--dwui-background-tab-header`                | Header background.                                                                            |
+| `--dwui-color-text-tab-header`                | Header text.                                                                                  |
+| `--dwui-background-tab-header-selected`       | Background of the selected header.                                                            |
+| `--dwui-color-text-tab-header-selected`       | Text of the selected header.                                                                  |
+| `--dwui-background-tab-header-disabled`       | Background of a disabled header.                                                              |
+| `--dwui-overlay-color-tab-header-hover`       | Color laid over a header on hover.                                                            |
+| `--dwui-background-tab-header-warn`           | Header background with `status="warn"`.                                                       |
+| `--dwui-background-tab-header-warn-selected`  | Selected header background with `status="warn"`.                                              |
+| `--dwui-color-text-tab-header-warn`           | Header text with `status="warn"`.                                                             |
+| `--dwui-background-tab-header-error`          | Header background with `status="error"`.                                                      |
+| `--dwui-background-tab-header-error-selected` | Selected header background with `status="error"`.                                             |
+| `--dwui-color-text-tab-header-error`          | Header text with `status="error"`.                                                            |
+| `--dwui-distance-tab-slide`                   | Where the contents slide in from when a tab is selected (`translateX`). Defaults to `-128px`. |
+| `--dwui-duration-tab-slide`                   | Duration of the slide-in. Defaults to `0.35s`.                                                |
+| `--dwui-easing-tab-slide`                     | Timing function of the slide-in. Defaults to `cubic-bezier(0.22, 1, 0.36, 1)`.                |

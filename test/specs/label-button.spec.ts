@@ -72,7 +72,7 @@ describe('LabelButton', () => {
         labelClass: 'label-part'
       }
     });
-    expect(wrapper.find('.dwui-label-icon').attributes('style')).toBe('--dwui-label-icon-gap: 0.5em;');
+    expect(wrapper.find('.dwui-label-icon').attributes('style')).toBe('--dwui-gap-label-icon: 0.5em;');
     expect(wrapper.find('svg').classes()).toContain('icon-part');
     expect(wrapper.find('.label-part').text()).toBe('Search');
   });

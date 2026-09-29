@@ -4,7 +4,7 @@
 <template>
   <span
     class="dwui-label-icon"
-    :style="props.gap == null ? undefined : { '--dwui-label-icon-gap': props.gap }"
+    :style="props.gap == null ? undefined : { '--dwui-gap-label-icon': props.gap }"
   >
     <slot name="icon">
       <component
@@ -70,6 +70,6 @@ const slots = defineSlots<Slots>();
 
 /* アイコンとラベルの間隔。gapはflex専用のためmarginで空ける */
 :where(.dwui-label-icon > .dwui-label:not(:first-child)) {
-  margin-left: var(--dwui-label-icon-gap, 0.25em);
+  margin-left: var(--dwui-gap-label-icon, 0.25em);
 }
 </style>

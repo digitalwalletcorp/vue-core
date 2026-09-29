@@ -32,15 +32,15 @@ The height is measured again whenever the size of the contents changes (e.g., wh
 
 ##### 🔧 Props
 
-| Prop            | Type          | Description |
-| --------------- | ------------- | ----------- |
-| `disabled`      | `boolean`     | Disables the toggle. |
+| Prop            | Type          | Description                                                |
+| --------------- | ------------- | ---------------------------------------------------------- |
+| `disabled`      | `boolean`     | Disables the toggle.                                       |
 | `initialExpand` | `boolean`     | Shows the contents expanded at first. Defaults to `false`. |
-| `noGradient`    | `boolean`     | Does not fade the bottom of the collapsed contents. |
-| `openLabel`     | `string`      | The label of the toggle while collapsed. |
-| `closeLabel`    | `string`      | The label of the toggle while expanded. |
-| `openPreset`    | `LabelPreset` | The icon and label of the toggle while collapsed. |
-| `closePreset`   | `LabelPreset` | The icon and label of the toggle while expanded. |
+| `noGradient`    | `boolean`     | Does not fade the bottom of the collapsed contents.        |
+| `openLabel`     | `string`      | The label of the toggle while collapsed.                   |
+| `closeLabel`    | `string`      | The label of the toggle while expanded.                    |
+| `openPreset`    | `LabelPreset` | The icon and label of the toggle while collapsed.          |
+| `closePreset`   | `LabelPreset` | The icon and label of the toggle while expanded.           |
 
 > 💡 **Toggle contents**
 > * The icon and the label are chosen separately. For each, the slot (icon) or the label prop (label) takes precedence over the preset.
@@ -51,17 +51,17 @@ The height is measured again whenever the size of the contents changes (e.g., wh
 
 ##### 🧩 Slots
 
-| Slot         | Description |
-| ------------ | ----------- |
+| Slot         | Description                                                                 |
+| ------------ | --------------------------------------------------------------------------- |
 | `open-icon`  | The icon of the toggle while collapsed. Takes precedence over `openPreset`. |
 | `close-icon` | The icon of the toggle while expanded. Takes precedence over `closePreset`. |
-| `default`    | The contents. |
+| `default`    | The contents.                                                               |
 
 ##### 🎨 Styling
 
 The toggle is a `<button>` styled with zero specificity (`:where()`).
 If your application styles the `button` element globally, those styles take precedence. Reset or restyle them in your own CSS through the `.dwui-accordion-section-toggle` class if needed.
 
-| CSS variable | Description |
-| ------------ | ----------- |
-| `--dwui-accordion-section-fade` | The color the bottom of the collapsed contents fades into. Set it to the background color behind the component. Defaults to `Canvas`. |
+| CSS variable                          | Description                                                                                                                           |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `--dwui-color-accordion-section-fade` | The color the bottom of the collapsed contents fades into. Set it to the background color behind the component. Defaults to `Canvas`. |

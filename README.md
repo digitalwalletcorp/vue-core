@@ -101,10 +101,10 @@ We recommend keeping a `vue-core-variables.css` in your application that connect
 ```css
 /* vue-core-variables.css */
 :root {
-  --dwui-tab-header-bg: var(--app-tab-header-background);
-  --dwui-tab-header-text: var(--app-tab-header-text);
-  --dwui-tab-header-selected-bg: var(--app-tab-header-selected-background);
-  --dwui-tab-header-selected-text: var(--app-tab-header-selected-text);
+  --dwui-background-tab-header: var(--app-tab-header-background);
+  --dwui-color-text-tab-header: var(--app-tab-header-text);
+  --dwui-background-tab-header-selected: var(--app-tab-header-selected-background);
+  --dwui-color-text-tab-header-selected: var(--app-tab-header-selected-text);
 }
 ```
 
