@@ -190,56 +190,56 @@ const onChangeTab = (labelId: string) => {
   display: block;
   min-width: 100px;
   padding: 0 4px;
-  border: 1px solid var(--dwui-tab-border, #565656);
-  border-bottom: 1px solid var(--dwui-tab-header-accent, #5ab4bd);
-  background: var(--dwui-tab-header-bg, linear-gradient(#1313c7, navy));
+  border: 1px solid var(--dwui-border-color-tab, #565656);
+  border-bottom: 1px solid var(--dwui-border-color-tab-header-accent, #5ab4bd);
+  background: var(--dwui-background-tab-header, linear-gradient(#1313c7, navy));
   line-height: 2em;
   text-align: center;
   white-space: nowrap;
-  color: var(--dwui-tab-header-text, azure);
+  color: var(--dwui-color-text-tab-header, azure);
   text-overflow: ellipsis;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 :where(.dwui-tab-radio:checked + .dwui-tab-item) {
-  background: var(--dwui-tab-header-selected-bg, linear-gradient(#1313c7, rgb(149, 149, 234), #1313c7));
-  color: var(--dwui-tab-header-selected-text, azure);
+  background: var(--dwui-background-tab-header-selected, linear-gradient(#1313c7, rgb(149, 149, 234), #1313c7));
+  color: var(--dwui-color-text-tab-header-selected, azure);
   /* 選択済みのタブは操作の対象ではないためカーソルを既定にする */
   cursor: default;
 }
 
 :where(.dwui-tab-radio:disabled + .dwui-tab-item) {
-  background: var(--dwui-tab-header-disabled-bg, gray);
+  background: var(--dwui-background-tab-header-disabled, gray);
   cursor: not-allowed;
 }
 
 :where(.dwui-tab-item.dwui-tab-warn) {
-  background: var(--dwui-tab-header-warn-bg, #efef13);
-  color: var(--dwui-tab-header-warn-text, midnightblue);
+  background: var(--dwui-background-tab-header-warn, #efef13);
+  color: var(--dwui-color-text-tab-header-warn, midnightblue);
 }
 
 :where(.dwui-tab-radio:checked + .dwui-tab-item.dwui-tab-warn) {
-  background: var(--dwui-tab-header-warn-selected-bg, linear-gradient(#fafa06, rgb(232, 238, 206), #fafa06));
+  background: var(--dwui-background-tab-header-warn-selected, linear-gradient(#fafa06, rgb(232, 238, 206), #fafa06));
 }
 
 :where(.dwui-tab-item.dwui-tab-error) {
-  background: var(--dwui-tab-header-error-bg, red);
-  color: var(--dwui-tab-header-error-text, azure);
+  background: var(--dwui-background-tab-header-error, red);
+  color: var(--dwui-color-text-tab-header-error, azure);
 }
 
 :where(.dwui-tab-radio:checked + .dwui-tab-item.dwui-tab-error) {
-  background: var(--dwui-tab-header-error-selected-bg, linear-gradient(#ff0000, rgb(240, 136, 136), #ff0000));
+  background: var(--dwui-background-tab-header-error-selected, linear-gradient(#ff0000, rgb(240, 136, 136), #ff0000));
 }
 
 :where(.dwui-tab-radio:not(:checked) + .dwui-tab-item:hover) {
   /* 背景の上に半透明の白を重ね、枠線と文字はそのままで背景だけを明るくする */
-  box-shadow: inset 0 0 0 999px var(--dwui-tab-header-hover-overlay, rgba(255, 255, 255, 0.35));
+  box-shadow: inset 0 0 0 999px var(--dwui-overlay-color-tab-header-hover, rgba(255, 255, 255, 0.35));
 }
 
 :where(.dwui-tab-items) {
   height: 100%;
-  border: 1px solid var(--dwui-tab-border, #565656);
+  border: 1px solid var(--dwui-border-color-tab, #565656);
   /* 中身を切り替えたときのスライドを枠内に収める */
   overflow: hidden;
 }

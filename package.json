@@ -1,6 +1,6 @@
 {
   "name": "@digitalwalletcorp/vue-core",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "type": "module",
   "description": "Basic UI components for Vue 3",
   "main": "lib/index.cjs",
@@ -11,27 +11,42 @@
   ],
   "exports": {
     ".": {
-      "types": "./lib/index.d.ts",
-      "import": "./lib/index.js",
-      "require": "./lib/index.cjs"
+      "import": {
+        "types": "./lib/index.d.ts",
+        "default": "./lib/index.js"
+      },
+      "require": {
+        "types": "./lib/index.d.cts",
+        "default": "./lib/index.cjs"
+      }
     },
     "./nuxt": {
       "types": "./lib/nuxt.d.ts",
       "import": "./lib/nuxt.js"
     },
     "./register": {
-      "types": "./lib/register.d.ts",
-      "import": "./lib/register.js",
-      "require": "./lib/register.cjs"
+      "import": {
+        "types": "./lib/register.d.ts",
+        "default": "./lib/register.js"
+      },
+      "require": {
+        "types": "./lib/register.d.cts",
+        "default": "./lib/register.cjs"
+      }
     },
     "./global": {
       "types": "./lib/global.d.ts"
     },
     "./style.css": "./lib/style.css",
     "./*": {
-      "types": "./lib/*.d.ts",
-      "import": "./lib/*.js",
-      "require": "./lib/*.cjs"
+      "import": {
+        "types": "./lib/*.d.ts",
+        "default": "./lib/*.js"
+      },
+      "require": {
+        "types": "./lib/*.d.cts",
+        "default": "./lib/*.cjs"
+      }
     }
   },
   "scripts": {

@@ -106,7 +106,7 @@ const setLoading = (value: boolean) => {
   padding: 4px 8px;
   overflow: hidden;
   /* 全幅を横断すると速度が出てカクつくため、既定は固定の移動量とease-outとフェードでスライドインする */
-  animation: dwui-tab-slide-in var(--dwui-tab-slide-duration, 0.35s) var(--dwui-tab-slide-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  animation: dwui-tab-slide-in var(--dwui-duration-tab-slide, 0.35s) var(--dwui-easing-tab-slide, cubic-bezier(0.22, 1, 0.36, 1));
 }
 
 :where(.dwui-tab-loading) {
@@ -116,14 +116,14 @@ const setLoading = (value: boolean) => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--dwui-loading-overlay, rgba(0, 0, 0, 0.25));
+  background: var(--dwui-overlay-color-loading, rgba(0, 0, 0, 0.25));
 }
 
 :where(.dwui-tab-loading-spinner) {
-  width: var(--dwui-loading-spinner-size, 40px);
-  height: var(--dwui-loading-spinner-size, 40px);
-  border: 4px solid var(--dwui-loading-spinner-track, rgba(255, 255, 255, 0.4));
-  border-top-color: var(--dwui-loading-spinner-color, #ffffff);
+  width: var(--dwui-size-loading-spinner, 40px);
+  height: var(--dwui-size-loading-spinner, 40px);
+  border: 4px solid var(--dwui-border-color-loading-spinner-track, rgba(255, 255, 255, 0.4));
+  border-top-color: var(--dwui-border-color-loading-spinner, #ffffff);
   border-radius: 50%;
   animation: dwui-tab-loading-spin 0.8s linear infinite;
 }
@@ -137,7 +137,7 @@ const setLoading = (value: boolean) => {
 @keyframes dwui-tab-slide-in {
   0% {
     opacity: 0;
-    transform: translateX(var(--dwui-tab-slide-distance, -128px));
+    transform: translateX(var(--dwui-distance-tab-slide, -128px));
   }
   100% {
     opacity: 1;
