@@ -172,15 +172,25 @@ onMounted(() => {
   width: 100%;
 }
 
+/* 開閉ボタンは押しボタンではなくアイコンとラベルの操作として見せるため、既定では枠・背景を持たない */
 :where(.dwui-accordion-section-toggle) {
   display: inline-flex;
   align-items: center;
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
   cursor: pointer;
 }
 
 :where(.dwui-accordion-section-toggle:disabled) {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+:where(.dwui-accordion-section-toggle:focus-visible) {
+  outline: var(--dwui-width-focus-ring, 2px) solid var(--dwui-outline-color-focus-ring, Highlight);
+  outline-offset: var(--dwui-offset-focus-ring, 2px);
 }
 
 :where(.dwui-accordion-section-toggle[aria-expanded='true']) {

@@ -59,9 +59,9 @@ The height is measured again whenever the size of the contents changes (e.g., wh
 
 ##### 🎨 Styling
 
-The toggle is a `<button>` styled with zero specificity (`:where()`).
-If your application styles the `button` element globally, those styles take precedence. Reset or restyle them in your own CSS through the `.dwui-accordion-section-toggle` class if needed.
-
 | CSS variable                          | Description                                                                                                                           |
 | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
 | `--dwui-color-accordion-section-fade` | The color the bottom of the collapsed contents fades into. Set it to the background color behind the component. Defaults to `Canvas`. |
+| `--dwui-width-focus-ring`             | Width of the focus ring. Defaults to `2px`.                                                                                           |
+| `--dwui-outline-color-focus-ring`     | Color of the focus ring. Defaults to `Highlight`.                                                                                     |
+| `--dwui-offset-focus-ring`            | Offset of the focus ring. Defaults to `2px`.                                                                                          |

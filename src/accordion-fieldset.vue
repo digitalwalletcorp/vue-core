@@ -6,7 +6,7 @@
     class="dwui-accordion-fieldset"
     :disabled="props.disabled"
   >
-    <legend>
+    <legend class="dwui-accordion-legend">
       <button
         type="button"
         class="dwui-accordion-toggle"
@@ -85,7 +85,7 @@ onMounted(() => {
   position: relative;
 }
 
-/* 詳細度0のため、利用側がbutton要素に装飾を当てている場合はそちらが優先される。打ち消しは利用側のCSSで行う */
+/* 開閉ボタンは押しボタンではなく凡例と一体の操作として見せるため、既定では枠・背景を持たない */
 :where(.dwui-accordion-toggle) {
   display: inline-flex;
   align-items: center;
@@ -101,6 +101,11 @@ onMounted(() => {
 :where(.dwui-accordion-toggle:disabled) {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+:where(.dwui-accordion-toggle:focus-visible) {
+  outline: var(--dwui-width-focus-ring, 2px) solid var(--dwui-outline-color-focus-ring, Highlight);
+  outline-offset: var(--dwui-offset-focus-ring, 2px);
 }
 
 :where(.dwui-accordion-contents) {

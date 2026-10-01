@@ -48,7 +48,7 @@ const slots = defineSlots<Slots>();
   width: var(--dwui-width-page-title, auto);
   padding: 4px;
   border-radius: 4px;
-  background: var(--dwui-background-page-title, linear-gradient(#323232 0%, rgb(32, 32, 31) 25%, rgb(32, 32, 31) 75%, #323232 100%));
+  background: var(--dwui-background-page-title, linear-gradient(light-dark(#323232, #3c3f45) 0%, light-dark(rgb(32, 32, 31), #2b2d31) 25%, light-dark(rgb(32, 32, 31), #2b2d31) 75%, light-dark(#323232, #3c3f45) 100%));
   color: var(--dwui-color-text-page-title, rgb(220, 220, 220));
   font-size: var(--dwui-font-size-page-title, 14px);
   font-weight: var(--dwui-font-weight-page-title, normal);

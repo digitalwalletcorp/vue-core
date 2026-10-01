@@ -269,10 +269,10 @@
   resolved "https://registry.yarnpkg.com/@colordx/core/-/core-5.8.0.tgz#4e60dc72d53210e41a00369843cec1602a2ba9dd"
   integrity sha512-cG0QJAO6VkaRUlIb0zOzX9gfJgs1pjoOL9gZ/PK1kfvBs0GCkADu5oQh6gPxXgQnZ3gV575h+lQRC0NlMDTclA==
 
-"@digitalwalletcorp/vue-svg-icons@^1.13.0":
-  version "1.15.1"
-  resolved "https://registry.yarnpkg.com/@digitalwalletcorp/vue-svg-icons/-/vue-svg-icons-1.15.1.tgz#337805d276c5eff7656c78357abfd3413b04908f"
-  integrity sha512-i5aa5MVipuBTeCPqjBj2iOtF9d5Q0d4n6wrQTZTyy9hAI/n187BUF2bRlTO0gpsifuHUSUTY7DVTmUYJwZfKIQ==
+"@digitalwalletcorp/vue-svg-icons@^1.15.3":
+  version "1.15.3"
+  resolved "https://registry.yarnpkg.com/@digitalwalletcorp/vue-svg-icons/-/vue-svg-icons-1.15.3.tgz#d12349381db727c3259e8250d6b6456216c49d2a"
+  integrity sha512-EagQa0NC6JlYpelAoKNaBjife8JqKlj8+oMB346MJZmpqVxIc+777Pyd8vRiDVXEpvq2UTKP58CpFesl9a6sGA==
 
 "@dxup/nuxt@^0.5.6":
   version "0.5.10"
