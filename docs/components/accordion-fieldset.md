@@ -45,5 +45,10 @@ The height is measured again whenever the size of the contents changes (e.g., wh
 
 ##### 🎨 Styling
 
-The toggle is a `<button>` styled with zero specificity (`:where()`).
-If your application styles the `button` element globally, those styles take precedence. Reset them in your own CSS through the `.dwui-accordion-toggle` class if needed.
+The `<legend>` has the `dwui-accordion-legend` class.
+
+| CSS variable                      | Description                                       |
+| --------------------------------- | ------------------------------------------------- |
+| `--dwui-width-focus-ring`         | Width of the focus ring. Defaults to `2px`.       |
+| `--dwui-outline-color-focus-ring` | Color of the focus ring. Defaults to `Highlight`. |
+| `--dwui-offset-focus-ring`        | Offset of the focus ring. Defaults to `2px`.      |

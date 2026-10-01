@@ -1,6 +1,6 @@
 {
   "name": "@digitalwalletcorp/vue-core",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "type": "module",
   "description": "Basic UI components for Vue 3",
   "main": "lib/index.cjs",
@@ -51,6 +51,7 @@
   },
   "scripts": {
     "build": "vite build",
+    "yarn:dedupe": "npx yarn-deduplicate --strategy highest yarn.lock",
     "install:dev": "rm -rf lib dest && find node_modules -mindepth 1 -delete && yarn install",
     "typecheck": "vue-tsc --noEmit -p tsconfig.json",
     "version:patch": "npm version patch",
@@ -83,11 +84,11 @@
     "src/**/*"
   ],
   "peerDependencies": {
-    "@digitalwalletcorp/vue-svg-icons": "^1.13.0",
+    "@digitalwalletcorp/vue-svg-icons": "^1.15.3",
     "vue": "^3.5.29"
   },
   "devDependencies": {
-    "@digitalwalletcorp/vue-svg-icons": "^1.13.0",
+    "@digitalwalletcorp/vue-svg-icons": "^1.15.3",
     "@nuxt/kit": "^3.17.5",
     "@types/node": "24.13.6",
     "@vitejs/plugin-vue": "^6.0.0",

@@ -36,10 +36,10 @@ The title bar of a page. The contents of the default slot are shown on its right
 
 ##### 🎨 Styling
 
-| CSS variable                    | Description                        |
-| ------------------------------- | ---------------------------------- |
-| `--dwui-background-page-title`  | Background.                        |
-| `--dwui-color-text-page-title`  | Text color.                        |
-| `--dwui-width-page-title`       | Width. Defaults to `auto`.         |
-| `--dwui-font-size-page-title`   | Font size. Defaults to `14px`.     |
-| `--dwui-font-weight-page-title` | Font weight. Defaults to `normal`. |
+| CSS variable                    | Description                                                                                                    |
+| ------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `--dwui-background-page-title`  | Background. Defaults to a gradient with #323232 and rgb(32, 32, 31) in light, and #3c3f45 and #2b2d31 in dark. |
+| `--dwui-color-text-page-title`  | Text color.                                                                                                    |
+| `--dwui-width-page-title`       | Width. Defaults to `auto`.                                                                                     |
+| `--dwui-font-size-page-title`   | Font size. Defaults to `14px`.                                                                                 |
+| `--dwui-font-weight-page-title` | Font weight. Defaults to `normal`.                                                                             |

@@ -22,6 +22,11 @@ describe('LabelButton', () => {
     expect(wrapper.text()).toBe('Search');
   });
 
+  it('has its own class so that the default styles do not depend on the button element', () => {
+    const wrapper = mount(LabelButton, { props: { preset } });
+    expect(wrapper.classes()).toEqual(['dwui-label-button']);
+  });
+
   it('passes attributes through to the button without a default type', async () => {
     let clicked = 0;
     const wrapper = mount(LabelButton, {
@@ -35,7 +40,7 @@ describe('LabelButton', () => {
         }
       }
     });
-    expect(wrapper.classes()).toEqual(['btn']);
+    expect(wrapper.classes()).toEqual(['dwui-label-button', 'btn']);
     expect(wrapper.attributes('style')).toBe('margin: 1px;');
     expect(wrapper.attributes('disabled')).toBeDefined();
     expect(wrapper.attributes('type')).toBeUndefined();

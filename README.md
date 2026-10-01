@@ -19,7 +19,7 @@ yarn add @digitalwalletcorp/vue-core @digitalwalletcorp/vue-svg-icons
 > ##### ⚠️ Requirements
 >
 > * **Vue 3.5.29+**: Props are typed with Vue's `ClassValue`, which is exported since Vue 3.5.29.
-> * **@digitalwalletcorp/vue-svg-icons 1.13.0+**: A peer dependency for component icons. Installing it alongside `vue-core` ensures a single shared copy of the icon package in your application.
+> * **@digitalwalletcorp/vue-svg-icons 1.15.3+**: Used for the icons in components.
 
 #### 📖 Usage
 
@@ -95,11 +95,22 @@ export default defineNuxtConfig({
 
 ##### ⚙️ Adapting to your application
 
-The components do not know your application's theme. Colors are referenced through `--dwui-*` CSS variables with fallbacks, and default styles have zero specificity (`:where()`).
-We recommend keeping a `vue-core-variables.css` in your application that connects your application's variables to the `--dwui-*` variables, and loading it after the stylesheets above. The variables of each component are listed in its document.
+**🎨 Dark Mode & Theme Support**
+
+Components automatically adapt to your application's color-scheme (supporting both light and dark modes natively).
+
+- **Follow OS Setting:** Add `:root { color-scheme: light dark; }` to your global CSS.
+- **Custom Theme Switching:** Change the CSS `color-scheme` property on `:root` or a parent container (e.g., `color-scheme: dark`). The components will switch automatically.
+- **No Theme Switching:** If you don't specify `color-scheme`, the components will be displayed in light mode.
+
+**🛠️ Customizing Styles (`--dwui-*` Variables)**
+
+Default styles use CSS variables (`--dwui-*`) and zero-specificity selectors (`:where()`), making them easy to override. The variables of each component are listed in its document.
+
+We recommend creating a `dwui-variables.css` file to map your application's design tokens to the library's `--dwui-*` variables, and importing it after the library stylesheet. If you use both `vue-forms` and `vue-core`, you can use a single `dwui-variables.css` file for both libraries, as they share common variables like those for focus rings.
 
 ```css
-/* vue-core-variables.css */
+/* dwui-variables.css */
 :root {
   --dwui-background-tab-header: var(--app-tab-header-background);
   --dwui-color-text-tab-header: var(--app-tab-header-text);
@@ -115,7 +126,7 @@ export default defineNuxtConfig({
     '@digitalwalletcorp/vue-core/style.css',
     '@digitalwalletcorp/vue-svg-icons/style.css',
     '@/assets/css/default.css', // your global CSS
-    '@/assets/css/vue-core-variables.css'
+    '@/assets/css/dwui-variables.css'
   ]
 });
 ```

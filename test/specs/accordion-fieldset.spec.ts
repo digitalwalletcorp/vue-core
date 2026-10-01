@@ -16,6 +16,11 @@ describe('AccordionFieldset', () => {
   });
 
   describe('legend', () => {
+    it('has its own class so that the application can style it without the element selector', () => {
+      const wrapper = mount(AccordionFieldset, { props: { legend: 'Filtering' } });
+      expect(wrapper.find('legend').classes()).toEqual(['dwui-accordion-legend']);
+    });
+
     it('renders the legend as text', () => {
       const wrapper = mount(AccordionFieldset, { props: { legend: '<b>Filtering</b>' } });
       expect(wrapper.find('legend .dwui-label').text()).toBe('<b>Filtering</b>');

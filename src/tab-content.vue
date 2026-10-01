@@ -116,7 +116,7 @@ const setLoading = (value: boolean) => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--dwui-overlay-color-loading, rgba(0, 0, 0, 0.25));
+  background: var(--dwui-overlay-color-loading, light-dark(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.45)));
 }
 
 :where(.dwui-tab-loading-spinner) {

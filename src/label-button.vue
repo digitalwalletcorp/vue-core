@@ -2,7 +2,7 @@
 アイコンとラベルを持つボタン
 -->
 <template>
-  <button>
+  <button class="dwui-label-button">
     <LabelIcon
       :preset="props.preset"
       :gap="props.gap"
@@ -55,3 +55,34 @@ interface Slots {
 }
 const slots = defineSlots<Slots>();
 </script>
+
+<style>
+:where(.dwui-label-button) {
+  display: inline-block;
+  padding: 2px 6px;
+  border: 1px solid var(--dwui-border-color-label-button, light-dark(#8f8f8f, #6b6f76));
+  border-radius: 3px;
+  background: var(--dwui-background-label-button, light-dark(#f4f4f4, #3a3c40));
+  color: var(--dwui-color-text-label-button, light-dark(#1a1a1a, #e6e6e6));
+  font: inherit;
+  cursor: pointer;
+}
+
+:where(.dwui-label-button:not(:disabled):hover) {
+  background: var(--dwui-background-label-button-hover, light-dark(#e6e6e6, #474a50));
+}
+
+:where(.dwui-label-button:not(:disabled):active) {
+  background: var(--dwui-background-label-button-active, light-dark(#d6d6d6, #2f3135));
+}
+
+:where(.dwui-label-button:disabled) {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+:where(.dwui-label-button:focus-visible) {
+  outline: var(--dwui-width-focus-ring, 2px) solid var(--dwui-outline-color-focus-ring, Highlight);
+  outline-offset: var(--dwui-offset-focus-ring, 2px);
+}
+</style>
